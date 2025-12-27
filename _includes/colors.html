@@ -1,0 +1,10 @@
+{% assign palette = site.data.theme_config.palettes[site.data.theme.selected_palette] %}
+<style>
+  :root {
+    --primary-color: {{ palette.primary }};
+    --secondary-color: {{ palette.secondary }};
+    --accent-color: {{ palette.accent }};
+    --background-color: {{ palette.background }};
+    --text-color: {{ palette.text }};
+  }
+</style>

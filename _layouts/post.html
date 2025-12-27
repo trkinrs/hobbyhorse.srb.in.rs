@@ -1,0 +1,102 @@
+---
+layout: default
+---
+
+<style>
+  .hidden-section {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  .show-section {
+    opacity: 0.9;
+    transform: translateX(0);
+  }
+</style>
+
+<style>
+  .single-post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .single-post .post-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .single-post .post-meta {
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .single-post .post-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #2e3b21;
+  }
+
+  .single-post .post-content h2,
+  .single-post .post-content h3 {
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+  }
+
+  .single-post .post-content a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  .single-post .post-content a:hover {
+    color: var(--accent-color);
+  }
+
+  .single-post img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+<article class="single-post my-5">
+  <section class="container my-5 hidden-section post-content">
+    <p class="post-meta">
+      {% if post.image %}
+        <div>
+          {% picture "{{ post.image }}" --img-attr='class="d-block mx-auto" loading="lazy"' %}
+        </div>
+      {% endif %}
+      {{ page.date | date: "%d.%m.%Y" }}, {% for author in page.authors %}
+      <a
+        href="{{ '/blog/author/' | append: author | downcase | append: '/' | relative_url }}"
+        class="text-decoration-underline"
+      >
+        {{ author }} </a
+      >{% unless forloop.last %}, {% endunless %} {% endfor %}
+    </p>
+    {{ content }}
+  </section>
+</article>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".hidden-section");
+    function handleScroll() {
+      sections.forEach((section) => {
+        const sectionPosition = section.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+        if (sectionPosition < screenHeight * 0.75) {
+          section.classList.add("show-section");
+        }
+      });
+    }
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+  });
+</script>
