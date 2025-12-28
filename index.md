@@ -4,7 +4,8 @@ title: Dobrodošli u našu stranicu
 phone: ''
 address: 'Priroda '
 email: Hobyhors@srb.in.rs
-description: 'Hobi konjici '
+description: Mi smo družina dece i konja na štapu. Ako niste nikad čuli za nas, vreme
+  je da se priključite, pratite naše stranice
 images:
 - url: assets/images/IMG-45f7286b8f90aeaa314dc92df4477bd2-V.jpg
   alt: ''
@@ -18,3 +19,8 @@ working_hours:
 - 'Nedelja: Zatvoreno'
 ---
 Mi smo družina dece i konja na štapu. Ako niste nikad čuli za nas, vreme je da se priključite, pratite naše stranice
+
+
+
+
+
