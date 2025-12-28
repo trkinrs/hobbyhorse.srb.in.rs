@@ -1,0 +1,436 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  animation: fadeIn 5s ease-out;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+header {
+  position: relative;
+  color: white;
+  padding: 100px 0;
+  border-radius: 0 0 20px 20px;
+}
+
+.header-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  border-radius: 0 0 20px 20px;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 20px 20px;
+}
+header h1 {
+  position: relative;
+  z-index: 1;
+}
+.carousel-item img {
+  width: 600px;
+  max-width: 100%;
+  height: 350px;
+  object-fit: cover;
+  /* border-radius: 15px; */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+.carousel-item img:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  border: none;
+}
+.btn-primary:hover {
+  background-color: var(--accent-color);
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 12%;
+}
+@media (max-width: 768px) {
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 15%;
+  }
+
+  #contact .row {
+    flex-direction: column;
+  }
+
+  #contact iframe {
+    height: 250px;
+  }
+}
+#backToTop,
+.navbar {
+  background-color: var(--primary-color) !important;
+}
+#backToTop {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+#backToTop:hover {
+  background-color: var(--secondary-color) !important;
+}
+.navbar {
+  width: 100%;
+  z-index: 1000;
+}
+.nav-link {
+  color: var(--background-color) !important;
+}
+.nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+#products {
+  background: linear-gradient(to bottom, var(--background-color), #e0f0a0);
+  padding: 60px 20px;
+  border-radius: 10px;
+}
+
+#products h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+#products h2::after {
+  content: "";
+  width: 50%;
+  height: 4px;
+  background: var(--secondary-color);
+  position: absolute;
+  bottom: -5px;
+  left: 25%;
+}
+
+.carousel-item {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.carousel-item-description {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 70%;
+  display: none;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.carousel-item img:hover + .carousel-item-description {
+  display: block;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--primary-color);
+  border-radius: 20%;
+}
+
+#contact {
+  background: linear-gradient(to bottom, #e0f0a0, #c8dc80);
+  padding: 60px 20px;
+  border-radius: 10px;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+#contact h2::after {
+  content: "";
+  width: 50%;
+  height: 4px;
+  background: var(--secondary-color);
+  position: absolute;
+  bottom: -5px;
+  left: 25%;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+#contact ul {
+  list-style: none;
+}
+
+#contact ul li {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+#contact ul li::before {
+  content: "📍";
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+#contact iframe {
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.pricing-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, var(--background-color), #e0f0a0);
+}
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.btn-primary {
+  background-color: var(--secondary-color);
+  border: none;
+}
+.btn-primary:hover {
+  background-color: var(--accent-color);
+}
+
+:root {
+  --bg-image: linear-gradient(
+    to bottom,
+    var(--background-color),
+    var(--accent-color)
+  );
+  --text-color: #333;
+  --card-bg: linear-gradient(
+    to bottom,
+    var(--background-color),
+    var(--accent-color)
+  );
+  --price-color: var(--primary-color);
+  --btn-bg: var(--secondary-color);
+  --btn-hover: var(--accent-color);
+}
+
+[data-bs-theme="dark"] {
+  --bg-image: linear-gradient(to bottom, #2e3b21, #1f2918);
+  --text-color: #f8f9fa;
+  --card-bg: #3b4a2e;
+  --price-color: var(--accent-color);
+  --btn-bg: var(--accent-color);
+  --btn-hover: var(--secondary-color);
+}
+
+body {
+  background: var(--bg-image);
+  color: var(--text-color);
+}
+
+.pricing-card {
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.price {
+  color: var(--price-color);
+}
+
+.btn-primary {
+  background-color: var(--btn-bg);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--btn-hover);
+}
+
+#products,
+#contact {
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+#contact p {
+  color: var(--text-color);
+}
+
+#recommended {
+  background-color: var(--secondary-color);
+}
+
+.parallax-bg {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+}
+
+#mainNavbar {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.hide-navbar {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+#backToTop {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 999;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.phone-button {
+  color: var(--background-color);
+  border-color: var(--background-color);
+}
+
+.post-title {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.post-title:hover {
+  text-decoration: underline;
+}
+
+.pagination .page-link {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+/* green palette - https://colorhunt.co/palette/5d8736809d3ca9c46cf4ffc3 
+   cherry-blossom palette - https://coolors.co/fc4f4f-fc7477-ffb6b9-fff2f2
+   blue - https://colorhunt.co/palette/5409da4e71ff8dd8ffbbfbff
+   blue-green -https://colorhunt.co/palette/2057814f959d98d2c0f6f8d5
+   purple - https://colorhunt.co/palette/aa60c8d69adeeabde6ffdfef
+   navy-teal-beige - https://colorhunt.co/palette/27445d497d7471bbb2efe9d5
+   black-maroon - https://colorhunt.co/palette/09122c872341be3144e17564
+   orange - https://colorhunt.co/palette/eb5a3cdf9755e7d283edf4c2
+   grey-sage - https://colorhunt.co/palette/727d73aab99ad0ddd0f0f0d7
+   dark-purple - https://colorhunt.co/palette/4417528174a0a888b5efb6c8
+   dark-green - https://colorhunt.co/palette/1235243e7b2785a947efe3c2
+   sage - https://colorhunt.co/palette/4b594566785f91ac8fb2c9ad
+   brownish-yellow - https://colorhunt.co/palette/a86523e9a319fad59afcefcb
+   grey-beige - https://colorhunt.co/palette/a59d84c1baa1d7d3bfecebde
+   black-grey-beige - https://colorhunt.co/palette/222831393e46948979dfd0b8
+   sage-yellow - https://colorhunt.co/palette/b2b377d2d180e5e483f1f5a8
+   golden-brown - https://colorhunt.co/palette/a86523e9a319fad59afcefcb
+   blue-greyish-beige - https://colorhunt.co/palette/405d72758694f7e7dcfff8f3
+   black-maroonish-yellow - https://colorhunt.co/palette/343131a04747d8a25eeedf7a
+   maroon-orange - https://colorhunt.co/palette/7c444f9f5255e16a54f39e60
+   bluish-grey-beige - https://colorhunt.co/palette/4c585b7e99a3a5bfccf4edd3
+   sage-brownish-grey - https://colorhunt.co/palette/706d54a08963c9b194dbdbdb
+   purple-pinkish - https://colorhunt.co/palette/4338787e60bfe4b1f0ffe1ff
+   black-greyish-beige - https://colorhunt.co/palette/181c143c3d37697565ecdfcc
+   blue-gray-pastel - https://colorhunt.co/palette/89a8b2b3c8cfe5e1daf1f0e8
+   black-maroon-purple - https://colorhunt.co/palette/1a1a1d3b1c326a1e55a64d79
+   greyish-sage-beige - https://colorhunt.co/palette/727d73aab99ad0ddd0f0f0d7
+   sage-peach-beige - https://colorhunt.co/palette/ccd5aee0e5b6faedcefefae0
+   purple-pinkish-yellow - https://colorhunt.co/palette/cb9df0f0c1e1fddbbbfff9bf
+   bluish-teal-grey - https://colorhunt.co/palette/2e50774da1a979d7bef6f4f0
+*/
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.navbar {
+  background-color: var(--primary-color);
+}
+
+.navbar a {
+  color: var(--accent-color);
+}
+
+.post-meta {
+  color: var(--secondary-color);
+}
+
+.single-post {
+  background-color: var(--background-color);
+  border: 1px solid var(--primary-color);
+}
